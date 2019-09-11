@@ -1,4 +1,6 @@
 from app import db
+from model.kelas import Kelasnya
+
 
 class Gurunya(db.Model):
     __tablename__ = 'guru'
@@ -10,7 +12,7 @@ class Gurunya(db.Model):
     email = db.Column(db.String())
     alamat = db.Column(db.String())
     no_tlp = db.Column(db.Integer())
-
+    kelas = db.relationship('Kelasnya')
     # movies = db.relationship('Movies')
 
     def __init__(self, user_name, password, full_name, email, alamat, no_tlp):
