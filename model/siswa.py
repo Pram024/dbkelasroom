@@ -1,4 +1,10 @@
 from app import db
+from model.jawaban import Jawabannya
+from model.masuk_kelas import MasukKelasnya
+from model.myclass import MyClassnya
+from model.myclass2 import MyClass2nya
+
+
 
 class Siswanya(db.Model):
     __tablename__ = 'murid'
@@ -11,7 +17,7 @@ class Siswanya(db.Model):
     alamat = db.Column(db.String())
     no_tlp = db.Column(db.Integer())
 
-    # movies = db.relationship('Movies')
+    masuk_kelas = db.relationship('MasukKelasnya')
 
     def __init__(self, user_name, password, full_name, email, alamat, no_tlp):
         self.user_name = user_name

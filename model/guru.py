@@ -1,7 +1,6 @@
 from app import db
 from model.kelas import Kelasnya
 
-
 class Gurunya(db.Model):
     __tablename__ = 'guru'
 
@@ -13,7 +12,7 @@ class Gurunya(db.Model):
     alamat = db.Column(db.String())
     no_tlp = db.Column(db.Integer())
     kelas = db.relationship('Kelasnya')
-    # movies = db.relationship('Movies')
+
 
     def __init__(self, user_name, password, full_name, email, alamat, no_tlp):
         self.user_name = user_name
@@ -23,7 +22,6 @@ class Gurunya(db.Model):
         self.alamat = alamat
         self.no_tlp = no_tlp
 
-    
     def serialize(self):
         return {
             'id_guru':self.id_guru,
